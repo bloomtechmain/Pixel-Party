@@ -1,0 +1,21 @@
+{
+  "name": "pixel-party-backend",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 execute pixel-party-db --local --file=src/db/schema.sql",
+    "db:migrate:remote": "wrangler d1 execute pixel-party-db --remote --file=src/db/schema.sql",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "hono": "^4.4.13",
+    "jose": "^5.6.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240909.0",
+    "typescript": "^5.5.3",
+    "wrangler": "^3.68.0"
+  }
+}
