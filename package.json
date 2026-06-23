@@ -6,7 +6,7 @@
     "install:all": "npm install --prefix Application/backend && npm install --prefix Application/frontend",
     "dev:backend": "npm run dev --prefix Application/backend",
     "dev:frontend": "npm run dev --prefix Application/frontend",
-    "build:frontend": "npm run build --prefix Application/frontend",
+    "build:frontend": "npm install --prefix Application/frontend && npm run build --prefix Application/frontend",
     "type-check:backend": "npm run type-check --prefix Application/backend",
     "db:migrate:local": "npm run db:migrate:local --prefix Application/backend",
     "db:migrate:remote": "npm run db:migrate:remote --prefix Application/backend",
