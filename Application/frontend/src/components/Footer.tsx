@@ -164,7 +164,7 @@ export function Footer() {
             {/* Contact snippet */}
             <div className="flex flex-col gap-3 mb-8">
               <a
-                href="mailto:pixelpartysrilanka@gmail.com"
+                href="/contact"
                 className="flex items-center gap-3 text-sm text-white/40 hover:text-[#B7CB45] transition-colors duration-200 group"
               >
                 <div
@@ -176,7 +176,7 @@ export function Footer() {
                     <polyline points="22,6 12,13 2,6" />
                   </svg>
                 </div>
-                pixelpartysrilanka@gmail.com
+                Email Us
               </a>
               <div className="flex items-center gap-3 text-sm text-white/40">
                 <div

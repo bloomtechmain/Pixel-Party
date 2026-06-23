@@ -247,7 +247,7 @@ export function ContactHero() {
             {/* CTA buttons */}
             <div className="mt-8 flex flex-wrap items-center gap-4" style={appear(0.72)}>
               <a
-                href="mailto:pixelpartysrilanka@gmail.com"
+                href="#contact-form"
                 className="inline-flex items-center gap-3 text-sm font-bold tracking-wide px-7 py-3.5 rounded-full transition-all duration-300 hover:brightness-110 hover:scale-105 active:scale-100"
                 style={{
                   background: '#B7CB45',
@@ -276,7 +276,7 @@ export function ContactHero() {
                   </svg>
                 }
                 label="Email Us"
-                value="pixelpartysrilanka@gmail.com"
+                value="Use the form below"
                 sub="We reply within 24 hours"
               />
             </div>

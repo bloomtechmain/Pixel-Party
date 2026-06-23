@@ -402,12 +402,12 @@ export function ArtistManagementSection() {
               </svg>
             </div>
             <p className="text-white/35 text-xs leading-relaxed">
-              Interested? Reach us at{' '}
+              Interested?{' '}
               <a
-                href="mailto:pixelpartysrilanka@gmail.com"
+                href="/contact"
                 className="text-[#B7CB45]/70 hover:text-[#B7CB45] transition-colors duration-200"
               >
-                pixelpartysrilanka@gmail.com
+                Contact us
               </a>{' '}
               or call <span className="text-white/50">011 20 98 178</span>
             </p>

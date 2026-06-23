@@ -225,22 +225,25 @@ export function AboutSection() {
     >
       {/* ── Background video ── */}
       <div ref={videoRef} className="absolute inset-0 w-full h-full" style={{ opacity: 0, overflow: 'hidden' }}>
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/RKsunIQlwgg?autoplay=1&mute=1&loop=1&playlist=RKsunIQlwgg&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&playsinline=1"
-          allow="autoplay; encrypted-media"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           style={{
             position: 'absolute',
             top: '50%',
             left: '50%',
-            width: '100vw',
-            height: '56.25vw',
-            minHeight: '100vh',
+            width: '100%',
+            height: '100%',
             minWidth: '177.78vh',
             transform: 'translate(-50%, -50%) scale(1.25)',
-            border: 'none',
+            objectFit: 'cover',
             pointerEvents: 'none',
           }}
-        />
+        >
+          <source src="https://pub-88f16f8528f244df978fe5773f5d5f59.r2.dev/nextvideo.mp4" type="video/mp4" />
+        </video>
         {/* Dark overlay so content stays readable */}
         <div
           className="absolute inset-0"
