@@ -6,7 +6,7 @@ compatibility_flags = ["nodejs_compat"]
 [[d1_databases]]
 binding = "DB"
 database_name = "pixel-party-db"
-database_id = "REPLACE_AFTER_wrangler_d1_create"
+database_id = "ed648bd5-143c-41b0-af6d-6bc71d6cbbdc"
 
 [vars]
 CORS_ORIGIN = "https://pixel-party.pages.dev"
