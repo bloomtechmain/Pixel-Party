@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import beautifulVideo from '../assets/beautifulMoment.mp4';
+const beautifulVideo = 'https://pub-88f16f8528f244df978fe5773f5d5f59.r2.dev/beautifulMoment.mp4';
 
 gsap.registerPlugin(ScrollTrigger);
 

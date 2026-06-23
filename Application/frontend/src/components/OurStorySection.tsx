@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import nextVideo from '../assets/nextvideo.mp4';
+const nextVideo = 'https://pub-88f16f8528f244df978fe5773f5d5f59.r2.dev/nextvideo.mp4';
 
 gsap.registerPlugin(ScrollTrigger);
 

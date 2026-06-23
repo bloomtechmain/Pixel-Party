@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import contactVideo from '../assets/Video Contact.mp4';
+const contactVideo = 'https://pub-88f16f8528f244df978fe5773f5d5f59.r2.dev/Video%20Contact.mp4';
 
 function appear(delay: number): CSSProperties {
   return {

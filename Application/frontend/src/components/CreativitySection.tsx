@@ -179,8 +179,7 @@ export function CreativitySection() {
         {/* Image */}
         <img
           src={vrGirl}
-          alt=""
-          aria-hidden
+          alt="Creative digital content creator immersed in visual storytelling"
           className="absolute inset-0 w-full h-full object-cover object-right-top"
           style={{ filter: 'brightness(0.55) contrast(1.08)' }}
         />

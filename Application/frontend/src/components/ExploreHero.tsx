@@ -1,5 +1,5 @@
 import { useState, useRef, type CSSProperties } from 'react';
-import promoVideo from '../assets/promo4.mp4';
+const promoVideo = 'https://pub-88f16f8528f244df978fe5773f5d5f59.r2.dev/promo4.mp4';
 
 function appear(delay: number): CSSProperties {
   return {

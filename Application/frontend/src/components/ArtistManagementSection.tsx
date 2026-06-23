@@ -184,8 +184,7 @@ export function ArtistManagementSection() {
       {/* Background photo */}
       <img
         src={careerBg}
-        alt=""
-        aria-hidden
+        alt="Pixel Party creative studio team working on cinematic video production"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
       />
 

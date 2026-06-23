@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
-import heroVideo from '../assets/0424.mp4';
+const heroVideo = 'https://pub-88f16f8528f244df978fe5773f5d5f59.r2.dev/0424.mp4';
 
 const STATS = [
   { value: '20+', label: 'Projects' },
