@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import careerBg from '../assets/career.png';
+import careerBg from '../assets/career.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

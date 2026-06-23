@@ -62,6 +62,7 @@ export function AboutSection() {
   const statsRef     = useRef<HTMLDivElement>(null);
   const statEls      = useRef<(HTMLSpanElement | null)[]>([]);
   const videoRef     = useRef<HTMLDivElement>(null);
+  const videoElRef   = useRef<HTMLVideoElement>(null);
   const readyRef     = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -195,7 +196,7 @@ export function AboutSection() {
         }
       );
 
-      /* ── Background video fade-in ── */
+      /* ── Background video fade-in (lazy-load on scroll) ── */
       gsap.fromTo(
         videoRef.current,
         { opacity: 0 },
@@ -207,6 +208,14 @@ export function AboutSection() {
             trigger: sectionRef.current,
             start: 'top 75%',
             toggleActions: 'play none none reverse',
+            onEnter: () => {
+              const v = videoElRef.current;
+              if (v && !v.src) {
+                v.src = 'https://pub-88f16f8528f244df978fe5773f5d5f59.r2.dev/nextvideo.mp4';
+                v.load();
+                v.play().catch(() => {});
+              }
+            },
           },
         }
       );
@@ -226,10 +235,11 @@ export function AboutSection() {
       {/* ── Background video ── */}
       <div ref={videoRef} className="absolute inset-0 w-full h-full" style={{ opacity: 0, overflow: 'hidden' }}>
         <video
-          autoPlay
+          ref={videoElRef}
           muted
           loop
           playsInline
+          preload="none"
           style={{
             position: 'absolute',
             top: '50%',
@@ -241,9 +251,7 @@ export function AboutSection() {
             objectFit: 'cover',
             pointerEvents: 'none',
           }}
-        >
-          <source src="https://pub-88f16f8528f244df978fe5773f5d5f59.r2.dev/nextvideo.mp4" type="video/mp4" />
-        </video>
+        />
         {/* Dark overlay so content stays readable */}
         <div
           className="absolute inset-0"
