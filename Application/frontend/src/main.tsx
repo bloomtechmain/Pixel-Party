@@ -1,5 +1,5 @@
 import { StrictMode, useEffect } from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import './styles/globals.css';
 import { HomePage } from './pages/HomePage';
@@ -36,7 +36,9 @@ function PrivateRoute({ children }: { children: React.ReactNode }) {
   return isAuthenticated() ? <>{children}</> : <Navigate to="/login" replace />;
 }
 
-createRoot(document.getElementById('root')!).render(
+const rootElement = document.getElementById('root')!;
+
+const app = (
   <StrictMode>
     <BrowserRouter>
       <ScrollToHash />
@@ -55,3 +57,10 @@ createRoot(document.getElementById('root')!).render(
     </BrowserRouter>
   </StrictMode>
 );
+
+// Use hydrateRoot when react-snap has pre-rendered content, createRoot otherwise
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(rootElement, app);
+} else {
+  createRoot(rootElement).render(app);
+}

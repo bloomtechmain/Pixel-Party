@@ -7,6 +7,9 @@ export default defineConfig({
   resolve: {
     alias: { '@': path.resolve(__dirname, './src') },
   },
+  build: {
+    target: 'es2019',
+  },
   server: {
     port: 5173,
     proxy: {
