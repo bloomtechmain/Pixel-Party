@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const steps = [
   {
     num: '01',
-    title: 'Pre-Production',
+    title: 'Pre Production',
     desc: 'Story concepts, mood boards, shot lists, and meticulous planning so every frame has a reason to exist.',
   },
   {
