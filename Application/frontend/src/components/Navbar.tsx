@@ -82,6 +82,15 @@ export function Navbar() {
 
         {/* ── CTA + hamburger ── */}
         <div className="flex items-center gap-4">
+          {/* Partner logo – just before Explore Events */}
+          <img
+            src={chasinduLogo}
+            alt="Chasindu, Entertainment with Purpose"
+            className="hidden lg:block select-none"
+            style={{ height: '30px', width: 'auto', mixBlendMode: 'screen' }}
+          />
+          <span className="hidden lg:block w-px h-6 bg-white/15 mr-1" aria-hidden />
+
           <Link
             to="/events"
             className="hidden md:inline-flex items-center text-white text-xs font-bold tracking-widest uppercase px-5 py-2.5 rounded-full
@@ -99,15 +108,6 @@ export function Navbar() {
           >
             Talk to Us
           </Link>
-
-          {/* Partner logo – right of the CTAs */}
-          <span className="hidden lg:block w-px h-6 bg-white/15 ml-2" aria-hidden />
-          <img
-            src={chasinduLogo}
-            alt="Chasindu, Entertainment with Purpose"
-            className="hidden lg:block select-none"
-            style={{ height: '30px', width: 'auto', mixBlendMode: 'screen' }}
-          />
 
           {/* Hamburger – mobile only */}
           <button
@@ -151,9 +151,15 @@ export function Navbar() {
               </Link>
             );
           })}
+          <img
+            src={chasinduLogo}
+            alt="Chasindu, Entertainment with Purpose"
+            className="mt-3 self-center select-none"
+            style={{ height: '28px', width: 'auto', mixBlendMode: 'screen' }}
+          />
           <Link
             to="/events"
-            className="mt-4 inline-flex justify-center text-white border border-white/20 text-xs font-bold tracking-widest uppercase px-5 py-3 rounded-full"
+            className="mt-2 inline-flex justify-center text-white border border-white/20 text-xs font-bold tracking-widest uppercase px-5 py-3 rounded-full"
             onClick={() => setOpen(false)}
           >
             Explore Events
@@ -165,12 +171,6 @@ export function Navbar() {
           >
             Talk to Us
           </Link>
-          <img
-            src={chasinduLogo}
-            alt="Chasindu, Entertainment with Purpose"
-            className="mt-3 self-center select-none"
-            style={{ height: '28px', width: 'auto', mixBlendMode: 'screen' }}
-          />
         </div>
       </div>
     </nav>
