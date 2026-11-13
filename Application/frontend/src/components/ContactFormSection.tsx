@@ -1,8 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import emailjs from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const EMAILJS_SERVICE_ID  = 'service_vgfqjsd';
+const EMAILJS_TEMPLATE_ID = 'template_bla2nqa';
+// EmailJS public keys are meant to be used in the browser; safe to commit.
+const EMAILJS_PUBLIC_KEY  = 'FY_V4-j23Audg69D6';
 
 const PROJECT_TYPES = [
   'Video Production',
@@ -88,8 +94,8 @@ export function ContactFormSection() {
     name: '', email: '', type: '', budget: '', message: '',
   });
   const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState('');
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
   const sectionRef = useRef<HTMLElement>(null);
   const counterRef = useRef<HTMLDivElement>(null);
@@ -131,30 +137,46 @@ export function ContactFormSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitting(true);
-    setSubmitError('');
+    if (sending) return;
+    setSending(true);
+    setError('');
+
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const type = form.type || 'Not specified';
+    const budget = form.budget || 'Not specified';
+    const message = form.message.trim();
+
     try {
-      const res = await fetch('http://localhost:3001/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          project_type: form.type,
-          budget: form.budget,
-          message: form.message,
-        }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setSubmitted(true);
-      } else {
-        setSubmitError(data.message || 'Something went wrong. Please try again.');
-      }
-    } catch {
-      setSubmitError('Unable to send message. Please try again later.');
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          // Common variable names so the template works whichever ones it uses.
+          name,
+          from_name: name,
+          email,
+          from_email: email,
+          reply_to: email,
+          title: `New project enquiry from ${name}`,
+          project_type: type,
+          budget,
+          time: new Date().toLocaleString('en-GB', {
+            timeZone: 'Asia/Colombo',
+            dateStyle: 'medium',
+            timeStyle: 'short',
+          }),
+          message: `Email: ${email}\nProject type: ${type}\nBudget: ${budget}\n\n${message}`,
+          raw_message: message,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY },
+      );
+      setSubmitted(true);
+    } catch (err) {
+      console.error('EmailJS send failed', err);
+      setError('Something went wrong sending your message. Please try again or reach us on WhatsApp.');
     } finally {
-      setSubmitting(false);
+      setSending(false);
     }
   };
 
@@ -354,7 +376,7 @@ export function ContactFormSection() {
                   Message Sent!
                 </h3>
                 <p className="text-white/50 text-base mb-8" style={{ maxWidth: '30rem' }}>
-                  Thank you for reaching out to Team Pixel Party. We'll review your brief and get back to you within 24 hours.
+                  Thanks for reaching out. Team Pixel Party will get back to you within 24 hours.
                 </p>
                 <button
                   onClick={() => {
@@ -372,7 +394,7 @@ export function ContactFormSection() {
 
             ) : (
               /* ── Form card ── */
-              <form onSubmit={handleSubmit} noValidate>
+              <form onSubmit={handleSubmit}>
                 <div
                   className="rounded-3xl"
                   style={{
@@ -511,29 +533,28 @@ export function ContactFormSection() {
                       . We never share your details.
                     </p>
                     <div className="flex flex-col items-end gap-2 shrink-0">
-                      {submitError && (
-                        <p className="text-red-400 text-xs max-w-[220px] text-right">{submitError}</p>
-                      )}
                       <button
                         type="submit"
-                        disabled={submitting}
-                        className="inline-flex items-center gap-3 text-sm font-bold tracking-wide px-8 py-4 rounded-full transition-all duration-300 hover:brightness-110 hover:scale-105 active:scale-100 disabled:opacity-60 disabled:cursor-not-allowed"
+                        disabled={sending}
+                        className="inline-flex items-center gap-3 text-sm font-bold tracking-wide px-8 py-4 rounded-full transition-all duration-300 hover:brightness-110 hover:scale-105 active:scale-100 disabled:opacity-60 disabled:hover:scale-100 disabled:cursor-wait"
                         style={{
                           background: '#B7CB45',
                           color: '#000',
                           boxShadow: '0 0 36px rgba(183,203,69,0.38)',
                         }}
                       >
-                        {submitting ? 'Sending…' : 'Send Message'}
-                        {!submitting && (
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="22" y1="2" x2="11" y2="13" />
-                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
-                          </svg>
-                        )}
+                        {sending ? 'Sending…' : 'Send Message'}
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="22" y1="2" x2="11" y2="13" />
+                          <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                        </svg>
                       </button>
                     </div>
                   </div>
+
+                  {error && (
+                    <p role="alert" className="mt-5 text-[13px] text-red-400/90">{error}</p>
+                  )}
 
                   {/* Bottom separator */}
                   <div
