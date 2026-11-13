@@ -108,6 +108,14 @@ export function Navbar() {
             Talk to Us
           </Link>
 
+          {/* Partner logo – mobile top bar, left of the hamburger */}
+          <img
+            src={chasinduLogo}
+            alt="Chasindu, Entertainment with Purpose"
+            className="md:hidden select-none"
+            style={{ height: '22px', width: 'auto', mixBlendMode: 'screen' }}
+          />
+
           {/* Hamburger – mobile only */}
           <button
             aria-label="Toggle menu"
@@ -157,15 +165,9 @@ export function Navbar() {
           >
             Explore Events
           </Link>
-          <img
-            src={chasinduLogo}
-            alt="Chasindu, Entertainment with Purpose"
-            className="self-center select-none"
-            style={{ height: '28px', width: 'auto', mixBlendMode: 'screen' }}
-          />
           <Link
             to="/contact"
-            className="inline-flex justify-center bg-lime text-black text-xs font-bold tracking-widest uppercase px-5 py-3 rounded-full"
+            className="mt-1 inline-flex justify-center bg-lime text-black text-xs font-bold tracking-widest uppercase px-5 py-3 rounded-full"
             onClick={() => setOpen(false)}
           >
             Talk to Us
