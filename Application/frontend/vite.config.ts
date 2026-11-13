@@ -20,5 +20,7 @@ export default defineConfig({
   },
   server: {
     port: 5173,
+    // Pages Functions run under `npm run dev:functions` (wrangler on :8788).
+    proxy: { '/api': 'http://localhost:8788' },
   },
 });
