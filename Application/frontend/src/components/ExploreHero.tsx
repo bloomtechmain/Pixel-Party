@@ -464,7 +464,7 @@ export function ExploreHero() {
             }}
           >
             Step inside our visual world. From intimate portraits to cinematic
-            productions — browse our photo albums and discover the stories we've
+            productions, browse our photo albums and discover the stories we've
             told, one frame at a time.
           </p>
         </div>

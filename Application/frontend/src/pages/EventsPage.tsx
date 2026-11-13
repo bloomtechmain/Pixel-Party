@@ -99,15 +99,15 @@ function Gallery({ items, onOpen }: { items: EventItem[] | null; onOpen: (i: num
           </p>
         </div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 items-start">
           {items
             ? items.map((item, i) => <Card key={item.id} item={item} onClick={() => onOpen(i)} />)
             : Array.from({ length: 6 }, (_, i) => (
                 <div
                   key={i}
-                  className="mb-4 sm:mb-5 break-inside-avoid rounded-2xl animate-pulse"
+                  className="rounded-2xl animate-pulse"
                   style={{
-                    height: [320, 420, 280, 380, 300, 440][i],
+                    aspectRatio: '1 / 1',
                     background: 'rgba(255,255,255,0.04)',
                     border: '1px solid rgba(255,255,255,0.06)',
                   }}
@@ -127,7 +127,7 @@ function Card({ item, onClick }: { item: EventItem; onClick: () => void }) {
     <button
       type="button"
       onClick={onClick}
-      className="group relative block w-full mb-4 sm:mb-5 break-inside-avoid overflow-hidden rounded-2xl text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B7CB45]"
+      className="group relative block w-full overflow-hidden rounded-2xl text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B7CB45]"
       style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
       aria-label={item.caption ? `Open ${item.caption}` : 'Open image'}
     >

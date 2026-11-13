@@ -14,7 +14,7 @@ const steps = [
   {
     num: '02',
     title: 'Direction & Shoot',
-    desc: 'On-set direction, cinematography, and lighting design — capturing raw footage with intention and precision.',
+    desc: 'On set direction, cinematography, and lighting design, capturing raw footage with intention and precision.',
   },
   {
     num: '03',
@@ -26,7 +26,7 @@ const steps = [
 const teamHighlights = [
   { label: 'Speciality', value: 'Narrative & Commercial' },
   { label: 'Workflow',   value: 'Concept to Delivery'   },
-  { label: 'Approach',  value: 'Emotion-Driven Craft'  },
+  { label: 'Approach',  value: 'Emotion Driven Craft'  },
 ];
 
 export function OurStorySection() {
@@ -256,7 +256,7 @@ export function OurStorySection() {
                 className="text-white/80 font-semibold leading-relaxed"
                 style={{ fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)', letterSpacing: '-0.01em' }}
               >
-                We don't just point a camera — we architect emotion, one deliberate pixel at a time.
+                We don't just point a camera, we architect emotion, one deliberate pixel at a time.
               </p>
             </div>
 
@@ -290,7 +290,7 @@ export function OurStorySection() {
               style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
             >
               <p className="text-white/35 text-[11px] leading-relaxed tracking-wide">
-                Every project begins with listening — understanding the vision before a single lens is lifted.
+                Every project begins with listening, understanding the vision before a single lens is lifted.
               </p>
             </div>
           </div>

@@ -240,7 +240,7 @@ export function ContactHero() {
                 className="text-white/55 text-base lg:text-[17px] leading-relaxed"
                 style={{ maxWidth: '28rem' }}
               >
-                Have a project in mind? Let's create something extraordinary together. Our team is ready to bring your vision to life — one pixel at a time.
+                Have a project in mind? Let's create something extraordinary together. Our team is ready to bring your vision to life, one pixel at a time.
               </p>
             </div>
 
@@ -290,7 +290,7 @@ export function ContactHero() {
                 }
                 label="Call Us"
                 value="011 20 98 178 / 076 658 4418"
-                sub="Mon – Fri, 9am to 6pm"
+                sub="Mon to Fri, 9am to 6pm"
               />
             </div>
 

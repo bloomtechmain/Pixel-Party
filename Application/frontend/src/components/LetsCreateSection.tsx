@@ -221,7 +221,7 @@ export function LetsCreateSection() {
               letterSpacing: '0.01em',
             }}
           >
-            Your vision deserves a team as ambitious as you are. Whether it's a music video, a full-length film, an event, a brand campaign, or a fashion project — Pixel Party is ready to bring it to life.
+            Your vision deserves a team as ambitious as you are. Whether it's a music video, a full length film, an event, a brand campaign, or a fashion project, Pixel Party is ready to bring it to life.
           </p>
         </div>
 

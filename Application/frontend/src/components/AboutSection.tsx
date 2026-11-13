@@ -9,25 +9,25 @@ const expertise = [
     num: '01',
     title: 'Music Videos',
     sub: 'Concept · Production · Post',
-    desc: 'Pixel Party is ready to produce music videos. From mood-board to final cut, we translate sound into stunning visuals — crafting cinematic narratives that amplify your music and captivate audiences across every platform.',
+    desc: 'Pixel Party is ready to produce music videos. From mood board to final cut, we translate sound into stunning visuals, crafting cinematic narratives that amplify your music and captivate audiences across every platform.',
   },
   {
     num: '02',
     title: 'Films',
     sub: 'Direction · Cinematography · Editing',
-    desc: 'Pixel Party is ready to make films. Whether it\'s a short film, documentary, or full-length feature, our team brings the full creative and technical expertise needed to tell stories that leave a lasting impression.',
+    desc: 'Pixel Party is ready to make films. Whether it\'s a short film, documentary, or full length feature, our team brings the full creative and technical expertise needed to tell stories that leave a lasting impression.',
   },
   {
     num: '03',
     title: 'Event Coverage',
     sub: 'Live · Highlight · Documentary',
-    desc: 'Pixel Party is ready to cover your event. From intimate gatherings to large-scale productions, we capture every significant moment with precision — delivering polished highlight reels and full event documentaries.',
+    desc: 'Pixel Party is ready to cover your event. From intimate gatherings to large scale productions, we capture every significant moment with precision, delivering polished highlight reels and full event documentaries.',
   },
   {
     num: '04',
     title: 'Brand & Product Marketing',
     sub: 'Strategy · Visuals · Campaign',
-    desc: 'Pixel Party is ready to market your brand and product. We craft compelling visual campaigns — product showcases, commercials, and social content — that communicate your value and convert audiences into loyal customers.',
+    desc: 'Pixel Party is ready to market your brand and product. We craft compelling visual campaigns, product showcases, commercials, and social content, that communicate your value and convert audiences into loyal customers.',
   },
   {
     num: '05',
@@ -537,7 +537,7 @@ export function AboutSection() {
                   textShadow: '0 0 40px rgba(255,255,255,0.06)',
                 }}
               >
-                Crafting visual stories that define brands and move audiences — one pixel at a time.
+                Crafting visual stories that define brands and move audiences, one pixel at a time.
               </p>
             </div>
           </div>
@@ -548,14 +548,14 @@ export function AboutSection() {
               <p className="text-white/55 text-base lg:text-[17px] leading-relaxed">
                 Born from a deep passion for visual storytelling, Pixel Party Studio stands at the
                 intersection of artistic vision and technical mastery. Every project we take on is
-                a new canvas — an opportunity to push boundaries and craft something genuinely
+                a new canvas, an opportunity to push boundaries and craft something genuinely
                 remarkable.
               </p>
             </div>
             <div ref={para2Ref} style={{ opacity: 0 }}>
               <p className="text-white/40 text-base lg:text-[17px] leading-relaxed">
                 From the first concept sketch to the final render, our team of dedicated creatives
-                ensures every frame exceeds expectations. We don't just produce content — we
+                ensures every frame exceeds expectations. We don't just produce content, we
                 architect experiences that linger long after the screen goes dark.
               </p>
             </div>
@@ -612,7 +612,7 @@ export function AboutSection() {
                   </svg>
                 ),
                 title: 'Films',
-                desc: 'Full-scale narrative and documentary filmmaking',
+                desc: 'Full scale narrative and documentary filmmaking',
               },
               {
                 icon: (

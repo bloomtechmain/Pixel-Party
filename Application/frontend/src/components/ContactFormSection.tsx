@@ -21,9 +21,9 @@ const PROJECT_TYPES = [
 
 const BUDGETS = [
   'Under $1,000',
-  '$1,000 – $5,000',
-  '$5,000 – $10,000',
-  '$10,000 – $25,000',
+  '$1,000 to $5,000',
+  '$5,000 to $10,000',
+  '$10,000 to $25,000',
   '$25,000+',
 ];
 
@@ -31,7 +31,7 @@ const STEPS = [
   {
     num: '01',
     title: 'Fill the form',
-    desc: 'Tell us your vision — as much or as little as you like.',
+    desc: 'Tell us your vision, as much or as little as you like.',
   },
   {
     num: '02',

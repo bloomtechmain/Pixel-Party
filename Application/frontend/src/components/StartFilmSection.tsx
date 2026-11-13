@@ -282,7 +282,7 @@ export function StartFilmSection() {
             className="text-white/55 leading-relaxed"
             style={{ fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)', maxWidth: '30rem', letterSpacing: '0.01em' }}
           >
-            Every great film begins with a single frame. Let us turn your vision into a cinematic journey — from the first scene to the final cut, we make your story unforgettable.
+            Every great film begins with a single frame. Let us turn your vision into a cinematic journey, from the first scene to the final cut, we make your story unforgettable.
           </p>
         </div>
 

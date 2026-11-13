@@ -3,13 +3,13 @@ import logoGreen from '../assets/Logo Green.png';
 
 const SERVICES = [
   { label: 'Video Production',    desc: 'Cinematic quality films' },
-  { label: 'Film Production',     desc: 'Full-scale productions' },
+  { label: 'Film Production',     desc: 'Full scale productions' },
   { label: 'Motion & VFX',        desc: 'Visual effects & animation' },
   { label: 'Brand Identity',      desc: 'Visual storytelling strategy' },
   { label: 'Photography',         desc: 'Stills that speak volumes' },
   { label: 'Creative Direction',  desc: 'Concept to final frame' },
-  { label: 'Editing & Color',     desc: 'Post-production excellence' },
-  { label: 'Content Strategy',    desc: 'Purpose-driven content plans' },
+  { label: 'Editing & Color',     desc: 'Post production excellence' },
+  { label: 'Content Strategy',    desc: 'Purpose driven content plans' },
 ];
 
 const NAV = [
@@ -158,7 +158,7 @@ export function Footer() {
             </a>
 
             <p className="text-white/38 text-sm leading-relaxed mb-8" style={{ maxWidth: '22rem' }}>
-              A creative studio built for brands that dare to be different. From concept to final frame — we craft visuals that move people.
+              A creative studio built for brands that dare to be different. From concept to final frame, we craft visuals that move people.
             </p>
 
             {/* Contact snippet */}

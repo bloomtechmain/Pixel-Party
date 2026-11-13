@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const BENEFITS = [
   {
     title: 'Professional Portfolio',
-    desc: 'Walk away with cinematic-quality footage and stills purpose-built for your personal reel and social presence.',
+    desc: 'Walk away with cinematic quality footage and stills purpose built for your personal reel and social presence.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B7CB45" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
@@ -18,7 +18,7 @@ const BENEFITS = [
   },
   {
     title: 'Brand Exposure',
-    desc: 'Get featured across our platforms and reach a fast-growing audience of brands, agencies, and creative scouts.',
+    desc: 'Get featured across our platforms and reach a fast growing audience of brands, agencies, and creative scouts.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B7CB45" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
@@ -27,7 +27,7 @@ const BENEFITS = [
   },
   {
     title: 'Career Mentorship',
-    desc: 'Learn on-set from our directors, DPs, and creative directors — real guidance that accelerates your growth.',
+    desc: 'Learn on set from our directors, DPs, and creative directors, real guidance that accelerates your growth.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B7CB45" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
@@ -58,7 +58,7 @@ const BENEFITS = [
   },
   {
     title: 'Creative Freedom',
-    desc: 'Bring your own ideas to the table — every shoot is a two-way creative partnership, not just a job.',
+    desc: 'Bring your own ideas to the table. Every shoot is a two way creative partnership, not just a job.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B7CB45" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
@@ -312,7 +312,7 @@ export function ArtistManagementSection() {
             Through Artist Management, Pixel Party LK Pvt Ltd focuses on building the next
             generation of Sri Lankan talent through strategic branding, content development,
             media exposure, event opportunities, and commercial partnerships. Our strategy is
-            to create long-term artist value by combining entertainment, digital media,
+            to create long term artist value by combining entertainment, digital media,
             advertising, and strong industry networking under one creative platform.
             We are specifically focused on the PR development and brand positioning of artists
             associated with Pixel Party.

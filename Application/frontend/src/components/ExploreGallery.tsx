@@ -308,7 +308,7 @@ export function ExploreGallery() {
               </span>
             </h2>
             <p className="text-white/38 text-sm max-w-xs leading-relaxed">
-              A curated selection of our finest work — explore albums by category
+              A curated selection of our finest work. Explore albums by category
               and find your vision.
             </p>
           </div>

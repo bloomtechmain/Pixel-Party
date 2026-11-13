@@ -238,7 +238,7 @@ export function VideoRevealSection() {
           <div className="flex items-center justify-center gap-4 mt-8">
             <div className="h-px w-16" style={{ background: 'linear-gradient(to right, transparent, rgba(183,203,69,0.5))' }} />
             <p className="text-white/45 text-sm font-medium tracking-wide" style={{ maxWidth: 380 }}>
-              Where raw vision becomes cinematic reality — every shoot, every grade, every story.
+              Where raw vision becomes cinematic reality, every shoot, every grade, every story.
             </p>
             <div className="h-px w-16" style={{ background: 'linear-gradient(to left, transparent, rgba(183,203,69,0.5))' }} />
           </div>

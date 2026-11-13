@@ -204,7 +204,7 @@ export function BeautifulMomentsSection() {
             className="text-white/55 leading-relaxed"
             style={{ fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)', maxWidth: '30rem', letterSpacing: '0.01em' }}
           >
-            From vibrant storytelling to cinematic precision, every frame we craft becomes a memory worth keeping — your story, brought to life in living colour.
+            From vibrant storytelling to cinematic precision, every frame we craft becomes a memory worth keeping, your story, brought to life in living colour.
           </p>
         </div>
 
