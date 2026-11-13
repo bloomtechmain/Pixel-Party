@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import logoGreen from '../assets/Logo Green.png';
+import chasinduLogo from '../assets/chasindu.webp';
 
 const NAV_LINKS: { label: string; to: string }[] = [
   { label: 'Home',       to: '/'         },
@@ -38,7 +39,7 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
 
         {/* ── Logo ── */}
         <a href="/" className="flex items-center select-none">
@@ -99,6 +100,15 @@ export function Navbar() {
             Talk to Us
           </Link>
 
+          {/* Partner logo – right of the CTAs */}
+          <span className="hidden lg:block w-px h-6 bg-white/15 ml-2" aria-hidden />
+          <img
+            src={chasinduLogo}
+            alt="Chasindu, Entertainment with Purpose"
+            className="hidden lg:block select-none"
+            style={{ height: '30px', width: 'auto', mixBlendMode: 'screen' }}
+          />
+
           {/* Hamburger – mobile only */}
           <button
             aria-label="Toggle menu"
@@ -115,7 +125,7 @@ export function Navbar() {
       {/* ── Mobile drawer ── */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out
-                    ${open ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}
+                    ${open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
       >
         <div className="bg-black/95 border-t border-white/[0.06] px-6 py-5 flex flex-col gap-5">
           {NAV_LINKS.map(({ label, to }) => {
@@ -155,6 +165,12 @@ export function Navbar() {
           >
             Talk to Us
           </Link>
+          <img
+            src={chasinduLogo}
+            alt="Chasindu, Entertainment with Purpose"
+            className="mt-3 self-center select-none"
+            style={{ height: '28px', width: 'auto', mixBlendMode: 'screen' }}
+          />
         </div>
       </div>
     </nav>
