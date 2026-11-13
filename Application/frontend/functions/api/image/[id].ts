@@ -1,4 +1,4 @@
-import { type Env, folderId, getFile } from '../../../server/drive';
+import { type Env, getFile, listImages } from '../../../server/drive';
 
 // GET /api/image/:id[?w=1600] → image bytes from the client's Drive folder.
 // Only files inside that folder are served, resized via Drive's thumbnail
@@ -24,15 +24,18 @@ export const onRequestGet = async (ctx: {
   const hit = await cache.match(cacheKey);
   if (hit) return hit;
 
-  const file = await getFile(env, id).catch(() => null);
-  if (!file || !file.parents?.includes(folderId(env)) || !file.mimeType.startsWith('image/')) {
+  // `parents` is hidden from API-key requests, so check membership against
+  // the folder listing instead: only the client's images can be served.
+  const inFolder = await listImages(env).then(fs => fs.some(f => f.id === id)).catch(() => false);
+  const file = inFolder ? await getFile(env, id).catch(() => null) : null;
+  if (!file || !file.mimeType.startsWith('image/')) {
     return new Response('Not found', { status: 404 });
   }
 
   // Resized version from Drive's thumbnail service; fall back to the original.
   let upstream: Response | null = null;
   if (file.thumbnailLink) {
-    upstream = await fetch(file.thumbnailLink.replace(/=s\d+(-[a-z0-9-]+)?$/i, `=w${w}`));
+    upstream = await fetch(file.thumbnailLink.replace(/=s\d+(-[a-z0-9-]+)?$/i, `=w${w}-rj`)); // -rj: JPEG, ~6x smaller than PNG
     if (!upstream.ok) upstream = null;
   }
   if (!upstream) {
