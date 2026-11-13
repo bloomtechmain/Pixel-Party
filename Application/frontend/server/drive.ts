@@ -64,5 +64,5 @@ export function captionFor(f: DriveFile): string {
   if (f.description?.trim()) return f.description.trim();
   const base = f.name.replace(/\.[a-z0-9]+$/i, '').trim();
   if (!base || GENERIC_NAME.test(base)) return '';
-  return base.replace(/[_-]+/g, ' ').replace(/\s+/g, ' ');
+  return base.replace(/_+/g, ' ').replace(/\s+/g, ' ');
 }
